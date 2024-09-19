@@ -1,45 +1,47 @@
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
+    background-color: #F4A89B; /* Light pink background */
 }
 
 .container {
     display: flex;
-    display: -webkit-flex; /* Safari */
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px; /* Space between boxes */
+    gap: 10px;
     max-width: 1000px;
-    margin: 20px auto; /* Center the container */
+    margin: 20px auto;
 }
 
 .box {
-    background-color: #f2f2f2;
-    border: 2px solid #ccc;
-    padding: 20px;
-    flex: 1 1 calc(33.33% - 20px); /* 3 boxes on a row, minus gap */
-    text-align: center;
+    color: black;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #000; /* Black border */
 }
 
-.box:nth-child(4),
-.box:nth-child(5) {
-    flex: 1 1 calc(50% - 20px); /* 2 boxes on the second row */
+.red {
+    background-color: red;
+    flex: 1 1 calc(33.33% - 20px); /* 3 boxes in the top row */
+    height: 150px;
 }
 
-/* Make it responsive */
+.blue {
+    background-color: blue;
+    flex: 1 1 calc(50% - 20px); /* 2 boxes in the bottom row */
+    height: 200px;
+}
+
+/* Make boxes responsive */
 @media (max-width: 768px) {
-    .box {
-        flex: 1 1 calc(50% - 20px); /* 2 boxes per row for smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .box {
-        flex: 1 1 100%; /* Stack boxes vertically on small screens */
+    .red, .blue {
+        flex: 1 1 100%; /* Stack all boxes vertically on small screens */
     }
 }

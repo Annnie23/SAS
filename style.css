@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Space between boxes */
+    max-width: 1000px;
+    margin: 20px auto; /* Center the container */
+}
+
+.box {
+    background-color: #f2f2f2;
+    border: 2px solid #ccc;
+    padding: 20px;
+    flex: 1 1 calc(33.33% - 20px); /* 3 boxes on a row, minus gap */
+    text-align: center;
+}
+
+.box:nth-child(4),
+.box:nth-child(5) {
+    flex: 1 1 calc(50% - 20px); /* 2 boxes on the second row */
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+    .box {
+        flex: 1 1 calc(50% - 20px); /* 2 boxes per row for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .box {
+        flex: 1 1 100%; /* Stack boxes vertically on small screens */
+    }
+}
